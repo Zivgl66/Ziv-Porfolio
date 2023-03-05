@@ -248,10 +248,9 @@ h3 {
   opacity: 0;
   transform: translateX(-50%);
 }
-/* .title2 {
-  opacity: 0;
-  transform: translateX(-50%);
-} */
+.title3 {
+  margin: 10px 0;
+}
 
 .second-title {
   margin: 100px 500px 100px 50px;
@@ -327,13 +326,13 @@ h3 {
 /* Cards ---------------------------------------------------- */
 .container {
   overflow: hidden;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 .card-carousel {
   --card-width: 80%;
-  --card-max-width: 300px;
-  --card-height: 450px;
+  --card-max-width: 400px;
+  --card-height: 560px;
   --carousel-min-width: 600px;
   z-index: 1;
   position: relative;
@@ -356,8 +355,8 @@ h3 {
 
 .card {
   position: absolute;
-  width: 300px;
-  height: 450px;
+  width: 400px;
+  height: 550px;
   border-radius: 100px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.342);
   overflow: hidden;
@@ -443,11 +442,11 @@ h3 {
 }
 
 .card-header {
-  font-size: 20px;
+  font-size: 28px;
   margin: 10px 0 0 10px;
 }
 .card-summary {
-  font-size: 14px;
+  font-size: 18px;
   margin: 10px;
   text-align: justify;
 }
@@ -474,7 +473,7 @@ h3 {
 .card-links {
   position: absolute;
   top: 85%;
-  left: 25%;
+  left: 30%;
   transform: translateX(-10%);
   display: flex;
   justify-content: space-around;
@@ -489,12 +488,10 @@ h3 {
 }
 
 .card-links a:hover {
-    filter: brightness(2);
-
-  
+  filter: brightness(2);
 }
 .card-links i {
-  font-size: 24px;
+  font-size: 32px;
 }
 
 /* Media Queries ---------------------------------------------------- */
