@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import { ScrollToPlugin } from "gsap/all";
 import ThreeModel from "../ThreeModel";
 import ASScroll from "@ashthornton/asscroll";
+import CardCarousel from "../Utils/Carousel";
 
 export default class Controls {
   constructor() {
@@ -18,11 +19,19 @@ export default class Controls {
     GSAP.registerPlugin(ScrollTrigger);
     GSAP.registerPlugin(ScrollToPlugin);
 
+    const cardsContainer = document.querySelector(".card-carousel");
+    // const cardsController = document.querySelector(
+    //   ".card-carousel + .card-controller"
+    // );
+    const carousel = new CardCarousel(cardsContainer);
+
     document.querySelector(".page").style.overflow = "visible";
     document.querySelector(".page-wrapper").setAttribute("asscroll", "");
     this.scrollTo();
     this.setSmoothScroll();
     this.setScrollTriger();
+
+    //cards controll
   }
 
   scrollTo() {
@@ -97,6 +106,13 @@ export default class Controls {
             immediateRender: false,
           },
         })
+          .to(this.characterThanks.scale, {
+            x: 0,
+            y: 0,
+            z: 0,
+            stagger: 1,
+            ease: "steps.in(5)",
+          })
           .to(".arrow-svg-wrapper", {
             opacity: 0,
           })
@@ -116,7 +132,7 @@ export default class Controls {
           scrollTrigger: {
             trigger: ".section-second",
             start: "-=500px",
-            end: "+=300px",
+            end: "+=100px",
             scrub: 2,
             invalidateOnRefresh: true,
             immediateRender: false,
@@ -128,24 +144,32 @@ export default class Controls {
             stagger: 1,
             ease: "sine.in(1)",
           })
-          .to(".second-title", {
-            opacity: 1,
-            transform: "translateX(0)",
-            stagger: 1,
-            ease: "sine.in(1)",
-          })
-          .to(this.characterThanks.scale, {
-            x: 1.3,
-            y: 1.3,
-            z: 1.3,
-            stagger: 1,
-            ease: "steps.in(5)",
-          });
+          .to(
+            ".second-title",
+            {
+              opacity: 1,
+              transform: "translateX(0)",
+              stagger: 1,
+              ease: "sine.in(1)",
+            },
+            "section2"
+          )
+          .to(
+            this.characterThanks.scale,
+            {
+              x: 1.3,
+              y: 1.3,
+              z: 1.3,
+              stagger: 1,
+              ease: "steps.in(5)",
+            },
+            "section2"
+          );
 
         this.thirdMoveTimeline = new GSAP.timeline({
           scrollTrigger: {
             trigger: ".section-third",
-            start: "-=800px",
+            start: "-=600px",
             end: "+=300px",
             scrub: 2,
             invalidateOnRefresh: true,
