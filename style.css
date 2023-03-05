@@ -249,7 +249,7 @@ h3 {
   transform: translateX(-50%);
 }
 .title3 {
-  margin: 10px 0;
+  margin: 30px 0;
 }
 
 .second-title {
@@ -331,8 +331,8 @@ h3 {
 
 .card-carousel {
   --card-width: 80%;
-  --card-max-width: 400px;
-  --card-height: 560px;
+  --card-max-width: 380px;
+  --card-height: 520px;
   --carousel-min-width: 600px;
   z-index: 1;
   position: relative;
@@ -355,8 +355,8 @@ h3 {
 
 .card {
   position: absolute;
-  width: 400px;
-  height: 550px;
+  width: 380px;
+  height: 500px;
   border-radius: 100px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.342);
   overflow: hidden;
