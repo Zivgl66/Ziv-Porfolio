@@ -326,7 +326,6 @@ h3 {
 /* Cards ---------------------------------------------------- */
 .container {
   overflow: hidden;
-  /* padding: 20px; */
 }
 
 .card-carousel {
@@ -338,6 +337,8 @@ h3 {
   position: relative;
   margin: 0 auto;
   width: 100%;
+  opacity: 0;
+  transform: translateX(50%);
   height: var(--card-height);
   min-width: var(--carousel-min-width);
   transition: filter 0.5s ease;

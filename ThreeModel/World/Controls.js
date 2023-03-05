@@ -19,10 +19,8 @@ export default class Controls {
     GSAP.registerPlugin(ScrollTrigger);
     GSAP.registerPlugin(ScrollToPlugin);
 
+    //cards carousel
     const cardsContainer = document.querySelector(".card-carousel");
-    // const cardsController = document.querySelector(
-    //   ".card-carousel + .card-controller"
-    // );
     const carousel = new CardCarousel(cardsContainer);
 
     document.querySelector(".page").style.overflow = "visible";
@@ -206,6 +204,12 @@ export default class Controls {
             "disappear"
           )
           .to(".title3", {
+            opacity: 1,
+            transform: "translateX(0)",
+            stagger: 1,
+            ease: "sine.in(1)",
+          })
+          .to(".card-carousel", {
             opacity: 1,
             transform: "translateX(0)",
             stagger: 1,
