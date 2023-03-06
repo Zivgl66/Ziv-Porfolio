@@ -359,13 +359,16 @@ h3 {
   width: 380px;
   height: 500px;
   border-radius: 100px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.342);
+  box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.169);
   overflow: hidden;
   transition: inherit;
   filter: brightness(0.8);
   margin: 0 auto;
   background-color: var(--color-background);
   font-family: sans-serif;
+}
+.card:hover {
+  cursor: grabbing;
 }
 .card.highlight {
   filter: brightness(1);
@@ -495,6 +498,26 @@ h3 {
   font-size: 32px;
 }
 
+.carousel-next {
+  position: absolute;
+  color: var(--color-p);
+  font-size: 36px;
+  right: 10%;
+  top: 45%;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.carousel-prev {
+  position: absolute;
+  color: var(--color-p);
+  font-size: 36px;
+  right: 90%;
+  top: 45%;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
 /* Media Queries ---------------------------------------------------- */
 @media (max-width: 599px) {
   .title {
