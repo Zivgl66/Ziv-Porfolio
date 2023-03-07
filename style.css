@@ -501,8 +501,8 @@ h3 {
 .carousel-next {
   position: absolute;
   color: var(--color-p);
-  font-size: 36px;
-  right: 10%;
+  font-size: 48px;
+  right: 15%;
   top: 45%;
   border: none;
   background-color: transparent;
@@ -511,12 +511,41 @@ h3 {
 .carousel-prev {
   position: absolute;
   color: var(--color-p);
-  font-size: 36px;
-  right: 90%;
+  font-size: 48px;
+  right: 85%;
   top: 45%;
   border: none;
   background-color: transparent;
   cursor: pointer;
+}
+.bounceLeft {
+  animation: bounceLeft 0.3s ease-in-out alternate;
+}
+.bounceRight {
+  animation: bounceRight 0.3s ease-in-out alternate;
+}
+
+@keyframes bounceLeft {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes bounceRight {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 /* Media Queries ---------------------------------------------------- */
 @media (max-width: 599px) {

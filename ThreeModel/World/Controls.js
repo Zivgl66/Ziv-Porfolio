@@ -25,6 +25,26 @@ export default class Controls {
 
     document.querySelector(".page").style.overflow = "visible";
     document.querySelector(".page-wrapper").setAttribute("asscroll", "");
+
+    //buttons event listeners
+    document.querySelector(".carousel-prev").addEventListener("click", () => {
+      document.querySelector(".carousel-prev").className =
+        "carousel-prev bounceLeft";
+      setTimeout(() => {
+        document.querySelector(".carousel-prev").classList.remove("bounceLeft");
+      }, 500);
+    });
+    document.querySelector(".carousel-next").addEventListener("click", () => {
+      document.querySelector(".carousel-next").className =
+        "carousel-next bounceRight";
+      setTimeout(() => {
+        document
+          .querySelector(".carousel-next")
+          .classList.remove("bounceRight");
+      }, 500);
+    });
+    //end buttons
+
     this.scrollTo();
     this.setSmoothScroll();
     this.setScrollTriger();
