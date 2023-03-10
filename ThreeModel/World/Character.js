@@ -94,6 +94,6 @@ export default class Character {
     this.mixer.update(this.time.delta * 0.0012);
     this.mixerWave.update(this.time.delta * 0.0008);
     this.mixerRun.update(this.time.delta * 0.0017);
-    this.mixerSit.update(this.time.delta * 0.0012);
+    this.mixerSit.update(this.time.delta * 0.0010);
   }
 }

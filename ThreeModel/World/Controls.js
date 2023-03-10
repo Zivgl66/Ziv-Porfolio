@@ -190,13 +190,17 @@ export default class Controls {
         },
         "section2"
       )
-      .to(this.characterThanks.scale, {
-        x: 1.3,
-        y: 1.3,
-        z: 1.3,
-        stagger: 1,
-        ease: "steps.in(5)",
-      });
+      .to(
+        this.characterThanks.scale,
+        {
+          x: 1.3,
+          y: 1.3,
+          z: 1.3,
+          stagger: 1,
+          ease: "steps.in(5)",
+        },
+        "section2"
+      );
 
     this.thirdTimeline = new GSAP.timeline({
       scrollTrigger: {
@@ -225,7 +229,7 @@ export default class Controls {
       .to(
         this.characterThanks.position,
         {
-          x: -23,
+          x: 23,
           y: 0,
           z: 0,
         },
@@ -275,8 +279,8 @@ export default class Controls {
         immediateRender: false,
       },
     })
-      .to(this.characterRun.scale, {
-        x: 0,
+      .to(this.characterRun.position, {
+        x: -23,
         y: 0,
         z: 0,
       })
