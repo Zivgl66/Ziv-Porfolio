@@ -9,4 +9,9 @@ export default [
     type: "glbModel",
     path: "/models/ZivCharacterWaving.glb",
   },
+  {
+    name: "characterRun",
+    type: "glbModel",
+    path: "/models/ZivCharacterRunning.glb",
+  },
 ];

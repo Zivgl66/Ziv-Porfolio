@@ -16,6 +16,12 @@ export default class Controls {
     this.camera = this.threeModel.camera;
     this.characterWave = this.threeModel.world.character.characterWave;
     this.characterThanks = this.threeModel.world.character.character;
+    this.characterRun = this.threeModel.world.character.characterRun;
+    this.floor = this.threeModel.world.floor.plane;
+    this.secondColor = new THREE.Color("#f7e092");
+    this.thirdColor = new THREE.Color("#EAB9B4");
+    this.forthColor = new THREE.Color("#C9E1ED");
+    this.currentSection = 1;
     GSAP.registerPlugin(ScrollTrigger);
     GSAP.registerPlugin(ScrollToPlugin);
 
@@ -47,9 +53,8 @@ export default class Controls {
 
     this.scrollTo();
     this.setSmoothScroll();
-    this.setScrollTriger();
-
-    //cards controll
+    window.addEventListener("wheel", this.setScrollTriger());
+    // this.setScrollTriger();
   }
 
   scrollTo() {
@@ -114,12 +119,12 @@ export default class Controls {
     ScrollTrigger.matchMedia({
       // Desktop
       "(min-width: 969px) ": () => {
-        this.firstMoveTimeline = new GSAP.timeline({
+        this.firstTimeline = new GSAP.timeline({
           scrollTrigger: {
             trigger: ".first-move",
             start: "top top",
             end: "+=500px",
-            scrub: 0.6,
+            scrub: 1.5,
             invalidateOnRefresh: true,
             immediateRender: false,
           },
@@ -139,130 +144,171 @@ export default class Controls {
             y: 0,
             z: 0,
           })
-          .to(this.characterThanks.scale, {
+          .to(this.characterRun.scale, {
             x: 0,
             y: 0,
             z: 0,
-            ease: "sine.out(1)",
           });
+      },
+    });
 
-        this.secondMoveTimeline = new GSAP.timeline({
-          scrollTrigger: {
-            trigger: ".section-second",
-            start: "-=500px",
-            end: "+=100px",
-            scrub: 2,
-            invalidateOnRefresh: true,
-            immediateRender: false,
-          },
-        })
-          .to(".title2", {
-            opacity: 1,
-            transform: "translateX(0)",
-            stagger: 1,
-            ease: "sine.in(1)",
-          })
-          .to(
-            ".second-title",
-            {
-              opacity: 1,
-              transform: "translateX(0)",
-              stagger: 1,
-              ease: "sine.in(1)",
-            },
-            "section2"
-          )
-          .to(
-            this.characterThanks.scale,
-            {
-              x: 1.3,
-              y: 1.3,
-              z: 1.3,
-              stagger: 1,
-              ease: "steps.in(5)",
-            },
-            "section2"
-          );
-
-        this.thirdMoveTimeline = new GSAP.timeline({
-          scrollTrigger: {
-            trigger: ".section-third",
-            start: "-=600px",
-            end: "+=300px",
-            scrub: 2,
-            invalidateOnRefresh: true,
-            immediateRender: false,
-          },
-        })
-          .to(
-            ".title2",
-            {
-              opacity: 0,
-              transform: "translateX(-50%)",
-              ease: "sine.out(1)",
-            },
-            "disappear"
-          )
-          .to(
-            ".second-title",
-            {
-              opacity: 0,
-              transform: "translateX(-50%)",
-
-              ease: "sine.out(1)",
-            },
-            "disappear"
-          )
-          .to(
-            this.characterThanks.scale,
-            {
-              x: 0,
-              y: 0,
-              z: 0,
-              ease: "sine.out(1)",
-            },
-            "disappear"
-          )
-          .to(".title3", {
-            opacity: 1,
-            transform: "translateX(0)",
-            stagger: 1,
-            ease: "sine.in(1)",
-          })
-          .to(".card-carousel", {
-            opacity: 1,
-            transform: "translateX(0)",
-            stagger: 1,
-            ease: "sine.in(1)",
-          });
-
-        this.forthMoveTimeline = new GSAP.timeline({
-          scrollTrigger: {
-            trigger: ".section-forth",
-            start: "-=500px",
-            end: "+=300px",
-            scrub: 2,
-            invalidateOnRefresh: true,
-            immediateRender: false,
-          },
-        }).to(".title4", {
+    this.secondMoveTimeline = new GSAP.timeline({
+      scrollTrigger: {
+        trigger: ".section-second",
+        start: "-=500px",
+        end: "+=500px",
+        scrub: 2,
+        invalidateOnRefresh: true,
+        immediateRender: false,
+      },
+    });
+    this.secondMoveTimeline
+      .to(this.floor.material.color, 1, {
+        r: 0.111111,
+        g: 0.222222,
+        b: 0.333333,
+      })
+      .to(".title2", {
+        opacity: 1,
+        transform: "translateX(0)",
+        stagger: 1,
+        ease: "sine.in(1)",
+      })
+      .to(
+        ".second-title",
+        {
           opacity: 1,
           transform: "translateX(0)",
-          stagger: 1,
+          stagger: 3,
           ease: "sine.in(1)",
-        });
+        },
+        "section2"
+      )
+      .to(this.characterThanks.scale, {
+        x: 1.3,
+        y: 1.3,
+        z: 1.3,
+        stagger: 1,
+        ease: "steps.in(5)",
+      });
+
+    this.thirdTimeline = new GSAP.timeline({
+      scrollTrigger: {
+        trigger: ".section-third",
+        start: "-=600px",
+        end: "+=300px",
+        scrub: 2,
+        invalidateOnRefresh: true,
+        immediateRender: false,
       },
+    })
+      .to(this.floor.material.color, 1, {
+        r: 0.811111,
+        g: 0.522222,
+        b: 0.733333,
+      })
+      .to(
+        this.characterThanks.scale,
+        {
+          x: 0,
+          y: 0,
+          z: 0,
+        },
+        "disappear"
+      )
+      .to(
+        this.characterThanks.position,
+        {
+          x: -23,
+          y: 0,
+          z: 0,
+        },
+        "disappear"
+      )
+      .to(
+        ".title2",
+        {
+          opacity: 0,
+          transform: "translateX(-50%)",
+        },
+        "disappear"
+      )
+      .to(
+        ".second-title",
+        {
+          opacity: 0,
+          transform: "translateX(-50%)",
+        },
+        "disappear"
+      )
+      .to(this.characterRun.scale, {
+        x: 0.5,
+        y: 0.5,
+        z: 0.5,
+      })
+      .to(".title3", {
+        opacity: 1,
+        transform: "translateX(0)",
+        stagger: 1,
+        ease: "sine.in(1)",
+      })
+      .to(".card-carousel", {
+        opacity: 1,
+        transform: "translateX(0)",
+        stagger: 1,
+        ease: "sine.in(1)",
+      });
 
-      //Medium screen -------------------------------------------
-
-      "(min-width: 600px) and (max-width: 968px)": () => {},
-
-      // Mobile  ------------------------------------------------
-      "(max-width: 599px)": () => {},
-
-      //All
-      all: () => {},
-    });
+    this.forthTimeline = new GSAP.timeline({
+      scrollTrigger: {
+        trigger: ".section-forth",
+        start: "-=500px",
+        end: "+=300px",
+        scrub: 2,
+        invalidateOnRefresh: true,
+        immediateRender: false,
+      },
+    })
+      .to(this.characterRun.scale, {
+        x: 0,
+        y: 0,
+        z: 0,
+      })
+      .to(this.floor.material.color, 1, {
+        r: 0.911111,
+        g: 0.422222,
+        b: 0.333333,
+      })
+      .to(".title4", {
+        opacity: 1,
+        transform: "translateX(0)",
+        stagger: 1,
+        ease: "sine.in(1)",
+      })
+      .to(".link1", {
+        opacity: 1,
+        transform: "translateY(0)",
+        stagger: 2,
+        ease: "power.in(1.2)",
+      })
+      .to(".link2", {
+        opacity: 1,
+        transform: "translateY(0)",
+        stagger: 2,
+        ease: "power.in(1.2)",
+      })
+      .to(".link3", {
+        opacity: 1,
+        transform: "translateY(0)",
+        stagger: 2,
+        ease: "power.in(1.2)",
+      })
+      .to(".link4", {
+        opacity: 1,
+        transform: "translateY(0)",
+        stagger: 2,
+        ease: "power.in(1.2)",
+      });
   }
 
   resize() {}
