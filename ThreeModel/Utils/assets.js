@@ -14,4 +14,9 @@ export default [
     type: "glbModel",
     path: "/models/ZivCharacterRunning.glb",
   },
+  {
+    name: "characterSit",
+    type: "glbModel",
+    path: "/models/ZivCharacterSit.glb",
+  },
 ];

@@ -17,6 +17,7 @@ export default class Controls {
     this.characterWave = this.threeModel.world.character.characterWave;
     this.characterThanks = this.threeModel.world.character.character;
     this.characterRun = this.threeModel.world.character.characterRun;
+    this.characterSit = this.threeModel.world.character.characterSit;
     this.floor = this.threeModel.world.floor.plane;
     this.secondColor = new THREE.Color("#f7e092");
     this.thirdColor = new THREE.Color("#EAB9B4");
@@ -145,6 +146,11 @@ export default class Controls {
             z: 0,
           })
           .to(this.characterRun.scale, {
+            x: 0,
+            y: 0,
+            z: 0,
+          })
+          .to(this.characterSit.scale, {
             x: 0,
             y: 0,
             z: 0,
@@ -308,6 +314,11 @@ export default class Controls {
         transform: "translateY(0)",
         stagger: 2,
         ease: "power.in(1.2)",
+      })
+      .to(this.characterSit.scale, {
+        x: 1,
+        y: 1,
+        z: 1,
       });
   }
 

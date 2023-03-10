@@ -27,10 +27,12 @@ export default class Preloader extends EventEmitter {
     convertSpan(document.querySelector(".intro-text"));
     this.characterWave = this.threeModel.world.character.characterWave;
     this.characterRun = this.threeModel.world.character.characterRun;
+    this.characterSit = this.threeModel.world.character.characterSit;
     this.character = this.threeModel.world.character.character;
     this.character.scale.set(0, 0, 0);
     this.characterWave.scale.set(0, 0, 0);
     this.characterRun.scale.set(0, 0, 0);
+    this.characterSit.scale.set(0, 0, 0);
   }
 
   firstIntro() {
