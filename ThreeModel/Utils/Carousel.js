@@ -169,11 +169,11 @@ export default class CardCarousel extends DraggingEvent {
     let formula;
 
     if (x <= 0) {
-      formula = 1 - (-1 / 4) * x;
+      formula = 1 - (-1.5 / 2.5) * x;
 
       return formula;
     } else if (x > 0) {
-      formula = 1 - (1 / 4) * x;
+      formula = 1 - (1.5 / 2.5) * x;
 
       return formula;
     }

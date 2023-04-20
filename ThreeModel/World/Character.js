@@ -27,6 +27,10 @@ export default class Character {
     this.onMouseMove();
   }
   setModel() {
+    this.characterWave.children.forEach((child) => {
+      child.castShadow = true;
+      child.receiveShadow = true;
+    });
     this.character.castShadow = true;
     this.characterWave.castShadow = true;
     this.characterRun.castShadow = true;
@@ -40,14 +44,15 @@ export default class Character {
     this.scene.add(this.characterRun);
     this.scene.add(this.characterSit);
     this.character.scale.set(1.3, 1.3, 1.3);
-    this.characterWave.scale.set(1.3, 1.3, 1.3);
-    this.characterRun.scale.set(0.5, 0.5, 0.5);
-    this.characterRun.scale.set(1, 1, 1);
-    this.character.position.set(2.2, -0.8, 3.2);
-    this.characterWave.position.set(2, 0.2, 3.2);
-    this.characterRun.position.set(4.2, 0.2, 3.2);
+    // this.characterWave.scale.set(1.3, 1.3, 1.3);
+    // this.characterRun.scale.set(0.5, 0.5, 0.5);
+    // this.characterSit.scale.set(1, 1, 1);
+    this.character.position.set(0, -1, 1.2);
+    this.characterWave.position.set(2.2, 0.2, 4.2);
+    this.characterRun.position.set(4, 0.2, 3.2);
     this.characterSit.position.set(0, -0.5, 3.2);
     this.characterRun.rotation.y = -1.2;
+    this.characterWave.rotation.x = -0.3;
   }
 
   setAnimation() {
@@ -92,8 +97,8 @@ export default class Character {
     // this.characterRun.rotation.y = this.lerp.current;
     this.characterSit.rotation.y = this.lerp.current;
     this.mixer.update(this.time.delta * 0.0012);
-    this.mixerWave.update(this.time.delta * 0.0008);
+    this.mixerWave.update(this.time.delta * 0.0007);
     this.mixerRun.update(this.time.delta * 0.0017);
-    this.mixerSit.update(this.time.delta * 0.0010);
+    this.mixerSit.update(this.time.delta * 0.001);
   }
 }

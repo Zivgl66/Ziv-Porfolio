@@ -112,6 +112,8 @@ export default class Controls {
     });
     return asscroll;
   }
+
+  //     Set smooth scroll
   setSmoothScroll() {
     this.asscroll = this.setupASScroll();
   }
@@ -124,8 +126,8 @@ export default class Controls {
           scrollTrigger: {
             trigger: ".first-move",
             start: "top top",
-            end: "+=500px",
-            scrub: 1.5,
+            end: "+=200px",
+            scrub: 0.5,
             invalidateOnRefresh: true,
             immediateRender: false,
           },
@@ -161,9 +163,9 @@ export default class Controls {
     this.secondMoveTimeline = new GSAP.timeline({
       scrollTrigger: {
         trigger: ".section-second",
-        start: "-=500px",
-        end: "+=500px",
-        scrub: 2,
+        start: "-250px",
+        end: "bottom bottom",
+        scrub: 3,
         invalidateOnRefresh: true,
         immediateRender: false,
       },
@@ -174,40 +176,83 @@ export default class Controls {
         g: 0.222222,
         b: 0.333333,
       })
-      .to(".title2", {
+      .to(".title2-word1", {
         opacity: 1,
         transform: "translateX(0)",
         stagger: 1,
-        ease: "sine.in(1)",
+        ease: "steps.in(3)",
       })
-      .to(
-        ".second-title",
-        {
-          opacity: 1,
-          transform: "translateX(0)",
-          stagger: 3,
-          ease: "sine.in(1)",
-        },
-        "section2"
-      )
-      .to(
-        this.characterThanks.scale,
-        {
-          x: 1.3,
-          y: 1.3,
-          z: 1.3,
-          stagger: 1,
-          ease: "steps.in(5)",
-        },
-        "section2"
-      );
+      .to(".title2-word2", {
+        opacity: 1,
+        transform: "translateX(0)",
+        stagger: 1.2,
+        ease: "steps.in(3)",
+      })
+      .to(".title2-word3", {
+        opacity: 1,
+        transform: "translateX(0)",
+        stagger: 1.3,
+        ease: "steps.in(3)",
+      })
+      .to(".title2-word4", {
+        opacity: 1,
+        transform: "translateX(0)",
+        stagger: 1.4,
+        ease: "steps.in(3)",
+      })
+      .to(".summary", {
+        opacity: 1,
+        transform: "translateX(0)",
+        stagger: 1.5,
+        ease: "power.in(1)",
+      })
+      .to(".educational-skills", {
+        opacity: 1,
+        transform: "translateX(0)",
+        stagger: 1.5,
+        ease: "power.in(1)",
+      });
+
+    this.characterThanksEnterTimeline = new GSAP.timeline({
+      scrollTrigger: {
+        trigger: ".section-second",
+        start: "-=250px center",
+        end: "bottom bottom",
+        scrub: 0.2,
+        invalidateOnRefresh: true,
+        immediateRender: false,
+      },
+    }).to(this.characterThanks.scale, {
+      x: 1.3,
+      y: 1.3,
+      z: 1.3,
+      stagger: 0.5,
+      ease: "steps.in(3)",
+    });
+
+    this.characterThanksExitTimeline = new GSAP.timeline({
+      scrollTrigger: {
+        trigger: ".section-third",
+        start: "-=500px center",
+        end: "-=200px bottom",
+        scrub: 0.2,
+        invalidateOnRefresh: true,
+        immediateRender: false,
+      },
+    }).to(this.characterThanks.scale, {
+      x: 0,
+      y: 0,
+      z: 0,
+      stagger: 2,
+      ease: "steps.in(1)",
+    });
 
     this.thirdTimeline = new GSAP.timeline({
       scrollTrigger: {
         trigger: ".section-third",
-        start: "-=600px",
-        end: "+=300px",
-        scrub: 2,
+        start: "-=200px center",
+        end: "+=300px top",
+        scrub: 0.5,
         invalidateOnRefresh: true,
         immediateRender: false,
       },
@@ -216,45 +261,6 @@ export default class Controls {
         r: 0.811111,
         g: 0.522222,
         b: 0.733333,
-      })
-      .to(
-        this.characterThanks.scale,
-        {
-          x: 0,
-          y: 0,
-          z: 0,
-        },
-        "disappear"
-      )
-      .to(
-        this.characterThanks.position,
-        {
-          x: 23,
-          y: 0,
-          z: 0,
-        },
-        "disappear"
-      )
-      .to(
-        ".title2",
-        {
-          opacity: 0,
-          transform: "translateX(-50%)",
-        },
-        "disappear"
-      )
-      .to(
-        ".second-title",
-        {
-          opacity: 0,
-          transform: "translateX(-50%)",
-        },
-        "disappear"
-      )
-      .to(this.characterRun.scale, {
-        x: 0.5,
-        y: 0.5,
-        z: 0.5,
       })
       .to(".title3", {
         opacity: 1,
@@ -269,21 +275,48 @@ export default class Controls {
         ease: "sine.in(1)",
       });
 
+    this.characterRunEnterTimeline = new GSAP.timeline({
+      scrollTrigger: {
+        trigger: ".section-third",
+        start: "-=200px center",
+        end: "+=300px top",
+        scrub: 0,
+        stagger: 1,
+        invalidateOnRefresh: true,
+        immediateRender: false,
+      },
+    }).to(this.characterRun.scale, {
+      x: 0.5,
+      y: 0.5,
+      z: 0.5,
+      ease: "circ.in",
+    });
+
+    this.characterRunExitTimeline = new GSAP.timeline({
+      scrollTrigger: {
+        trigger: ".section-third",
+        start: "bottom bottom",
+        end: "bottom +10px",
+        scrub: 0.2,
+        invalidateOnRefresh: true,
+        immediateRender: false,
+      },
+    }).to(this.characterRun.scale, {
+      x: 0,
+      y: 0,
+      z: 0,
+    });
+
     this.forthTimeline = new GSAP.timeline({
       scrollTrigger: {
         trigger: ".section-forth",
-        start: "-=500px",
-        end: "+=300px",
-        scrub: 2,
+        start: "-=200px center",
+        end: "+=300px top",
+        scrub: 0.2,
         invalidateOnRefresh: true,
         immediateRender: false,
       },
     })
-      .to(this.characterRun.position, {
-        x: -23,
-        y: 0,
-        z: 0,
-      })
       .to(this.floor.material.color, 1, {
         r: 0.911111,
         g: 0.422222,
@@ -292,8 +325,9 @@ export default class Controls {
       .to(".title4", {
         opacity: 1,
         transform: "translateX(0)",
-        stagger: 1,
-        ease: "sine.in(1)",
+        // stagger: 1,
+        duration: 5,
+        ease: "slow(1.2, 1.5, true)",
       })
       .to(".link1", {
         opacity: 1,

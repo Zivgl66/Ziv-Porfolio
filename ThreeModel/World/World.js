@@ -4,7 +4,6 @@ import EventEmitter from "events";
 import ThreeModel from "../ThreeModel";
 import Character from "./Character.js";
 import Floor from "./Floor.js";
-import Controls from "./Controls.js";
 import Environment from "./Environment.js";
 
 export default class World extends EventEmitter {
@@ -22,7 +21,6 @@ export default class World extends EventEmitter {
       this.environment = new Environment();
       this.floor = new Floor();
       this.character = new Character();
-      // this.controls = new Controls();
       this.emit("worldready");
     });
 
