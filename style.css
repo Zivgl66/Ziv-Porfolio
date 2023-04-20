@@ -385,14 +385,13 @@ h3 {
 }
 .title3 {
   text-align: left;
-  margin: 120px 0px 50px 50px;
+  margin: 120px 0px 10px 50px;
 }
 .title3 span:nth-of-type(even) {
   color: var(--color-p);
 }
 .title4 {
   text-align: left;
-
   margin: 150px 0px 0px 50px;
 }
 .title4 span:nth-of-type(even) {
