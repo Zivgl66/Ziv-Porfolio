@@ -96,7 +96,7 @@ h3 {
 .page::before {
   background: radial-gradient(
     150px circle at var(--mouse-x) var(--mouse-y),
-    rgba(255, 255, 235, 0.7),
+    rgba(255, 255, 254, 0.7),
     transparent 50%
   );
   border-radius: inherit;
@@ -667,7 +667,7 @@ h3 {
   padding: 5px;
   border-radius: 25px;
   background-color: var(--color-p);
-  color: var(--color-text2);
+  color: var(--color-text);
   font-size: 12px;
 }
 .card-links {
@@ -785,5 +785,97 @@ h3 {
 }
 
 /* Media Queries ---------------------------------------------------- */
-@media (max-width: 599px) {
+@media (max-width: 699px) {
+  /*                        First section                              */
+  .intro-text {
+    font-size: 1.3rem;
+  }
+  .section-margin {
+    height: 150px;
+  }
+  .title-main {
+    font-size: 12rem;
+  }
+  .firstLine {
+    top: 1%;
+    left: 25%;
+  }
+  .secondLine {
+    top: 50%;
+    left: 1%;
+  }
+  .title-sub {
+    font-size: 2rem;
+    top: 55%;
+    left: 32%;
+  }
+
+  /*                        Second section                              */
+
+  .title-main-second {
+    font-size: 2.5rem;
+    margin: 100px 0px 10px 30px;
+  }
+  .summary {
+    max-width: 300px;
+    width: 220px;
+    height: 400px;
+    padding: 20px;
+    margin: 0 0 0 50px;
+  }
+  .summary-paragraph {
+    font-size: 1.2rem;
+    line-height: 18px;
+    word-spacing: 0.2rem;
+  }
+  .educational-skills {
+    font-size: 1.2rem;
+    line-height: 18px;
+    word-spacing: 0.2rem;
+    max-width: 300px;
+    width: 220px;
+    height: 400px;
+    padding: 20px;
+    margin: 0 50px 0 0;
+  }
+  .educational-about {
+    margin: 0;
+  }
+
+  /*                        Third section                              */
+
+  .card-carousel {
+    --card-width: 50%;
+    --card-max-width: 250px;
+    --card-height: 380px;
+    margin: 50px 0px 0 0px;
+  }
+
+  .card {
+    position: absolute;
+    width: 250px;
+    height: 350px;
+  }
+  .card-header {
+    font-size: 18px;
+    margin: 5px 0 0 5px;
+  }
+  .card-summary {
+    font-size: 16px;
+    margin: 2px;
+    text-align: center;
+  }
+  .card-tech {
+    margin: 5px;
+  }
+  .card-links {
+    left: 25%;
+  }
+  .card-links i {
+    font-size: 18px;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+@media (max-width: 399px) {
 }
