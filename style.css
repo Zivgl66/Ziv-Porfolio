@@ -884,7 +884,7 @@ h3 {
   .toggle-bar {
     position: absolute;
     left: 25%;
-    top: 90%;
+    top: 10%;
   }
   .intro-text {
     font-size: 1.2rem;
@@ -905,20 +905,24 @@ h3 {
     font-size: 7rem;
   }
   .firstLine {
-    width: 200px;
+    width: 100%;
     top: 15%;
+    left: auto;
     text-align: center;
   }
   .secondLine {
+    font-size: 6.5rem;
     top: 70%;
+    left: auto;
     position: absolute;
     text-align: center;
     width: 100%;
   }
   .title-sub {
     font-size: 1.5rem;
-    top: 68%;
-    left: 18%;
+    position: absolute;
+    right: 50%;
+    top: 60%;
   }
 
   /*                        Second section                              */
