@@ -893,11 +893,11 @@ h3 {
     height: 300px;
   }
   .title-main {
-    font-size: 5rem;
+    font-size: 6rem;
   }
   .firstLine {
-    top: 20%;
-    left: 25%;
+    top: 15%;
+    left: 30%;
   }
   .secondLine {
     top: 70%;
@@ -906,7 +906,7 @@ h3 {
   .title-sub {
     font-size: 1.5rem;
     top: 68%;
-    left: 20%;
+    left: 18%;
   }
 
   /*                        Second section                              */
