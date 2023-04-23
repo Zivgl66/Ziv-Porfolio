@@ -883,14 +883,17 @@ h3 {
   /*                        First section                              */
   .toggle-bar {
     position: absolute;
-    left: 25%;
-    top: 10%;
+    left: 23%;
+    top: 5%;
+  }
+  .arrow-svg-wrapper {
+    top: 85%;
   }
   .intro-text {
     font-size: 1.2rem;
   }
   .section-margin {
-    height: 100px;
+    height: 50px;
   }
   .section3-margin {
     height: 300px;
@@ -906,13 +909,13 @@ h3 {
   }
   .firstLine {
     width: 100%;
-    top: 15%;
+    top: 10%;
     left: auto;
     text-align: center;
   }
   .secondLine {
     font-size: 6.5rem;
-    top: 70%;
+    top: 60%;
     left: auto;
     position: absolute;
     text-align: center;
@@ -922,7 +925,7 @@ h3 {
     font-size: 1.5rem;
     position: absolute;
     right: 50%;
-    top: 60%;
+    top: 55%;
   }
 
   /*                        Second section                              */
