@@ -882,7 +882,9 @@ h3 {
 @media (max-width: 399px) {
   /*                        First section                              */
   .toggle-bar {
-    right: 50%;
+    position: absolute;
+    left: 25%;
+    top: 90%;
   }
   .intro-text {
     font-size: 1.2rem;
@@ -900,7 +902,7 @@ h3 {
     align-items: center;
   }
   .title-main {
-    font-size: 6rem;
+    font-size: 7rem;
   }
   .firstLine {
     width: 200px;
@@ -909,8 +911,9 @@ h3 {
   }
   .secondLine {
     top: 70%;
-    position: relative;
+    position: absolute;
     text-align: center;
+    width: 100%;
   }
   .title-sub {
     font-size: 1.5rem;
