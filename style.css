@@ -877,8 +877,12 @@ h3 {
   }
 }
 
+/*                          Small Screen                                */
 @media (max-width: 399px) {
   /*                        First section                              */
+  .toggle-bar {
+    right: 50%;
+  }
   .intro-text {
     font-size: 1.2rem;
   }
@@ -892,17 +896,17 @@ h3 {
     font-size: 5rem;
   }
   .firstLine {
-    top: 10%;
+    top: 20%;
     left: 25%;
   }
   .secondLine {
     top: 70%;
-    left: 1%;
+    left: 10%;
   }
   .title-sub {
     font-size: 1.5rem;
     top: 68%;
-    left: 10%;
+    left: 20%;
   }
 
   /*                        Second section                              */
