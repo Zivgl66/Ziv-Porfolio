@@ -12,7 +12,9 @@ export default class Floor {
     this.material = new THREE.MeshStandardMaterial({
       // color: 0x6DAEB0,
       // color: 0xf7e092,
-      color: 0xffe120,
+      // color: 0xffe120,
+      // color: 0x011222cd,
+      color: 0x23523c,
       // color: 0xfdf2c9,
       // side: THREE.DoubleSide,
     });

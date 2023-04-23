@@ -136,16 +136,9 @@ export default class Controls {
             x: 0,
             y: 0,
             z: 0,
-            stagger: 1,
-            ease: "steps.in(5)",
           })
           .to(".arrow-svg-wrapper", {
             opacity: 0,
-          })
-          .to(this.characterWave.scale, {
-            x: 0,
-            y: 0,
-            z: 0,
           })
           .to(this.characterRun.scale, {
             x: 0,
@@ -153,6 +146,11 @@ export default class Controls {
             z: 0,
           })
           .to(this.characterSit.scale, {
+            x: 0,
+            y: 0,
+            z: 0,
+          })
+          .to(this.characterWave.scale, {
             x: 0,
             y: 0,
             z: 0,
