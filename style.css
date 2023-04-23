@@ -878,4 +878,97 @@ h3 {
 }
 
 @media (max-width: 399px) {
+  /*                        First section                              */
+  .intro-text {
+    font-size: 1.2rem;
+  }
+  .section-margin {
+    height: 100px;
+  }
+  .section3-margin {
+    height: 300px;
+  }
+  .title-main {
+    font-size: 5rem;
+  }
+  .firstLine {
+    top: 10%;
+    left: 25%;
+  }
+  .secondLine {
+    top: 70%;
+    left: 1%;
+  }
+  .title-sub {
+    font-size: 1.5rem;
+    top: 68%;
+    left: 10%;
+  }
+
+  /*                        Second section                              */
+
+  .title-main-second {
+    font-size: 1.5rem;
+    margin: 200px 0px 0px 10px;
+  }
+  .about-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .summary {
+    max-width: 300px;
+    width: 250px;
+    height: 400px;
+    padding: 20px;
+    margin: 0 0 0 25px;
+  }
+  .summary-paragraph {
+    font-size: 1rem;
+    line-height: 18px;
+    word-spacing: 0.2rem;
+  }
+  .educational-skills {
+    font-size: 1rem;
+    line-height: 18px;
+    word-spacing: 0.2rem;
+    max-width: 300px;
+    width: 250px;
+    height: 400px;
+    padding: 20px;
+    margin: 0 0 0 25px;
+  }
+
+  /*                        Third section                              */
+
+  .card-carousel {
+    --card-width: 50%;
+    --card-max-width: 250px;
+    --card-height: 380px;
+    margin: 50px 0px 0 0px;
+  }
+
+  .card {
+    position: absolute;
+    width: 250px;
+    height: 350px;
+  }
+  .card-header {
+    font-size: 18px;
+    margin: 5px 0 0 5px;
+  }
+  .card-summary {
+    font-size: 14px;
+    margin: 2px;
+    text-align: center;
+  }
+  .card-tech {
+    margin: 5px;
+  }
+  .card-links {
+    left: 20%;
+  }
+  .card-links i {
+    font-size: 24px;
+    transition: all 0.2s ease-in-out;
+  }
 }
