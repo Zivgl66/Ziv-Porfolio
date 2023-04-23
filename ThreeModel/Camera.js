@@ -34,7 +34,7 @@ export default class Camera {
   }
   setOrbitControls() {
     this.controls = new OrbitControls(this.orthographicCamera, this.canvas);
-    this.controls.enableDamping = true;
+    this.controls.enableDamping = false;
     this.controls.enableZoom = false;
   }
   resize() {

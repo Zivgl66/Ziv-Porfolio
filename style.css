@@ -797,6 +797,7 @@ h3 {
     font-size: 12rem;
   }
   .firstLine {
+    width: 100vw;
     top: 1%;
     left: 25%;
   }
@@ -892,16 +893,24 @@ h3 {
   .section3-margin {
     height: 300px;
   }
+  .main-title-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
   .title-main {
     font-size: 6rem;
   }
   .firstLine {
+    width: 200px;
     top: 15%;
-    left: 30%;
+    text-align: center;
   }
   .secondLine {
     top: 70%;
-    left: 10%;
+    position: relative;
+    text-align: center;
   }
   .title-sub {
     font-size: 1.5rem;
