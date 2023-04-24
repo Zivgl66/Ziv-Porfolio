@@ -910,7 +910,7 @@ h3 {
     width: 100%;
     top: 10%;
     left: auto;
-    /* text-align: center; */
+    text-align: center;
   }
   .secondLine {
     font-size: 6.5rem;
