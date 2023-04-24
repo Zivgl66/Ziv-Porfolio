@@ -882,8 +882,10 @@ h3 {
 @media (max-width: 399px) {
   /*                        First section                              */
   .toggle-bar {
-    left: 15%;
+    left: auto;
     top: 5%;
+    margin: 0 auto;
+    width: 100%;
   }
   .arrow-svg-wrapper {
     top: 85%;
@@ -908,7 +910,7 @@ h3 {
   }
   .firstLine {
     width: 100%;
-    top: 10%;
+    top: 38%;
     left: auto;
     text-align: center;
   }
@@ -925,7 +927,7 @@ h3 {
     position: absolute;
     text-align: center;
     left: auto;
-    top: 60%;
+    top: 59%;
   }
 
   /*                        Second section                              */
