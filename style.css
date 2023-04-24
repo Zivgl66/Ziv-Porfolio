@@ -977,22 +977,26 @@ h3 {
     border-radius: 50px;
   }
   .card-header {
-    font-size: 18px;
+    font-size: 20px;
     margin: 5px 0 0 5px;
   }
   .card-summary {
-    font-size: 14px;
+    font-size: 16px;
     margin: 2px;
     text-align: center;
   }
   .card-tech {
     margin: 5px;
   }
+  .card-tech li {
+    font-size: 14px;
+  }
   .card-links {
     left: 20%;
   }
+
   .card-links i {
-    font-size: 24px;
+    font-size: 28px;
     transition: all 0.2s ease-in-out;
   }
 }
