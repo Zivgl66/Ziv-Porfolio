@@ -923,7 +923,8 @@ h3 {
   .title-sub {
     font-size: 1.5rem;
     position: absolute;
-    right: 50%;
+    text-align: center;
+    left: auto;
     top: 55%;
   }
 
