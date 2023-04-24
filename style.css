@@ -934,6 +934,9 @@ h3 {
     font-size: 3rem;
     margin: 200px 0px 0px 10px;
   }
+  .title2 {
+    font-size: 2.5rem;
+  }
   .about-wrapper {
     display: flex;
     flex-direction: column;
