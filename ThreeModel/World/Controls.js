@@ -121,7 +121,7 @@ export default class Controls {
   setScrollTriger() {
     ScrollTrigger.matchMedia({
       // Desktop
-      "(min-width: 969px) ": () => {
+      "(min-width: 699px) ": () => {
         this.firstTimeline = new GSAP.timeline({
           scrollTrigger: {
             trigger: ".first-move",
@@ -308,6 +308,242 @@ export default class Controls {
             trigger: ".section-forth",
             start: "-=200px center",
             end: "+=300px top",
+            scrub: 0.2,
+            invalidateOnRefresh: true,
+            immediateRender: false,
+          },
+        })
+          .to(this.floor.material.color, 1, {
+            r: 0.911111,
+            g: 0.422222,
+            b: 0.333333,
+          })
+          .to(".title4", {
+            opacity: 1,
+            transform: "translateX(0)",
+            // stagger: 1,
+            duration: 5,
+            ease: "slow(1.2, 1.5, true)",
+          })
+          .to(".link1", {
+            opacity: 1,
+            transform: "translateY(0)",
+            stagger: 2,
+            ease: "power.in(1.2)",
+          })
+          .to(".link2", {
+            opacity: 1,
+            transform: "translateY(0)",
+            stagger: 2,
+            ease: "power.in(1.2)",
+          })
+          .to(".link3", {
+            opacity: 1,
+            transform: "translateY(0)",
+            stagger: 2,
+            ease: "power.in(1.2)",
+          })
+          .to(".link4", {
+            opacity: 1,
+            transform: "translateY(0)",
+            stagger: 2,
+            ease: "power.in(1.2)",
+          })
+          .to(this.characterSit.scale, {
+            x: 1,
+            y: 1,
+            z: 1,
+          });
+      },
+
+      //  Mobile (Small Screen)
+      "(max-width: 399px) ": () => {
+        this.firstTimeline = new GSAP.timeline({
+          scrollTrigger: {
+            trigger: ".first-move",
+            start: "top top",
+            end: "+=200px",
+            scrub: 0.5,
+            invalidateOnRefresh: true,
+            immediateRender: false,
+          },
+        })
+          .to(this.characterThanks.scale, {
+            x: 0,
+            y: 0,
+            z: 0,
+          })
+          .to(".arrow-svg-wrapper", {
+            opacity: 0,
+          })
+          .to(this.characterRun.scale, {
+            x: 0,
+            y: 0,
+            z: 0,
+          })
+          .to(this.characterSit.scale, {
+            x: 0,
+            y: 0,
+            z: 0,
+          })
+          .to(this.characterWave.scale, {
+            x: 0,
+            y: 0,
+            z: 0,
+          });
+
+        this.secondMoveTimeline = new GSAP.timeline({
+          scrollTrigger: {
+            trigger: ".section-second",
+            start: "-150px",
+            end: "bottom bottom",
+            scrub: 3,
+            invalidateOnRefresh: true,
+            immediateRender: false,
+          },
+        });
+        this.secondMoveTimeline
+          .to(this.floor.material.color, 1, {
+            r: 0.111111,
+            g: 0.222222,
+            b: 0.333333,
+          })
+          .to(".title2-word1", {
+            opacity: 1,
+            transform: "translateX(0)",
+            stagger: 1,
+            ease: "steps.in(3)",
+          })
+          .to(".title2-word2", {
+            opacity: 1,
+            transform: "translateX(0)",
+            stagger: 1.2,
+            ease: "steps.in(3)",
+          })
+          .to(".title2-word3", {
+            opacity: 1,
+            transform: "translateX(0)",
+            stagger: 1.3,
+            ease: "steps.in(3)",
+          })
+          .to(".title2-word4", {
+            opacity: 1,
+            transform: "translateX(0)",
+            stagger: 1.4,
+            ease: "steps.in(3)",
+          })
+          .to(".summary", {
+            opacity: 1,
+            transform: "translateX(0)",
+            stagger: 1.5,
+            ease: "power.in(1)",
+          })
+          .to(".educational-skills", {
+            opacity: 1,
+            transform: "translateX(0)",
+            stagger: 1.5,
+            ease: "power.in(1)",
+          });
+
+        this.characterThanksEnterTimeline = new GSAP.timeline({
+          scrollTrigger: {
+            trigger: ".section-second",
+            start: "-=100px center",
+            end: "bottom bottom",
+            scrub: 0.2,
+            invalidateOnRefresh: true,
+            immediateRender: false,
+          },
+        }).to(this.characterThanks.scale, {
+          x: 1,
+          y: 1,
+          z: 1,
+          stagger: 0.5,
+          ease: "steps.in(3)",
+        });
+
+        this.characterThanksExitTimeline = new GSAP.timeline({
+          scrollTrigger: {
+            trigger: ".section-third",
+            start: "-=50px center",
+            end: "-=150px bottom",
+            scrub: 0.2,
+            invalidateOnRefresh: true,
+            immediateRender: false,
+          },
+        }).to(this.characterThanks.scale, {
+          x: 0,
+          y: 0,
+          z: 0,
+          stagger: 2,
+          ease: "steps.in(1)",
+        });
+
+        this.thirdTimeline = new GSAP.timeline({
+          scrollTrigger: {
+            trigger: ".section-third",
+            start: "-=100px center",
+            end: "+=100px top",
+            scrub: 0.5,
+            invalidateOnRefresh: true,
+            immediateRender: false,
+          },
+        })
+          .to(this.floor.material.color, 1, {
+            r: 0.811111,
+            g: 0.522222,
+            b: 0.733333,
+          })
+          .to(".title3", {
+            opacity: 1,
+            transform: "translateX(0)",
+            stagger: 1,
+            ease: "sine.in(1)",
+          })
+          .to(".card-carousel", {
+            opacity: 1,
+            transform: "translateX(0)",
+            stagger: 1,
+            ease: "sine.in(1)",
+          });
+
+        this.characterRunEnterTimeline = new GSAP.timeline({
+          scrollTrigger: {
+            trigger: ".section-third",
+            start: "-=100px center",
+            end: "+=100px top",
+            scrub: 0,
+            stagger: 1,
+            invalidateOnRefresh: true,
+            immediateRender: false,
+          },
+        }).to(this.characterRun.scale, {
+          x: 0.5,
+          y: 0.5,
+          z: 0.5,
+          ease: "circ.in",
+        });
+
+        this.characterRunExitTimeline = new GSAP.timeline({
+          scrollTrigger: {
+            trigger: ".section-third",
+            start: "bottom bottom",
+            end: "bottom +10px",
+            scrub: 0.2,
+            invalidateOnRefresh: true,
+            immediateRender: false,
+          },
+        }).to(this.characterRun.scale, {
+          x: 0,
+          y: 0,
+          z: 0,
+        });
+
+        this.forthTimeline = new GSAP.timeline({
+          scrollTrigger: {
+            trigger: ".section-forth",
+            start: "-=100px center",
+            end: "+=100px top",
             scrub: 0.2,
             invalidateOnRefresh: true,
             immediateRender: false,
