@@ -882,7 +882,6 @@ h3 {
 @media (max-width: 399px) {
   /*                        First section                              */
   .toggle-bar {
-    position: absolute;
     left: 15%;
     top: 5%;
   }
@@ -965,15 +964,16 @@ h3 {
 
   .card-carousel {
     --card-width: 50%;
-    --card-max-width: 280px;
-    --card-height: 380px;
+    --card-max-width: 300px;
+    --card-height: 400px;
     margin: 50px 0px 0 0px;
   }
 
   .card {
     position: absolute;
-    width: 280px;
-    height: 350px;
+    width: 300px;
+    height: 380px;
+    border-radius: 50px;
   }
   .card-header {
     font-size: 18px;
