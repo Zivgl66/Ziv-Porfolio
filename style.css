@@ -11,6 +11,8 @@ html,
 body {
   font-family: "Kanit", sans-serif;
   background-color: #ffe120;
+  width: 100vw;
+  height: 100vh;
 }
 h1,
 h3,
