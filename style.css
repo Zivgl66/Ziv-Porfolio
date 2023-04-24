@@ -941,27 +941,24 @@ h3 {
     display: flex;
     flex-direction: column;
   }
-  .summary {
+  .about-paragraph {
     max-width: 300px;
-    width: 250px;
+    width: 280px;
     height: 400px;
-    padding: 20px;
     margin: 0 auto;
+    padding: 20px;
+  }
+  .summary {
   }
   .summary-paragraph {
-    font-size: 1rem;
+    font-size: 1.4rem;
     line-height: 18px;
     word-spacing: 0.2rem;
   }
   .educational-skills {
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 18px;
     word-spacing: 0.2rem;
-    max-width: 300px;
-    width: 250px;
-    height: 400px;
-    padding: 20px;
-    margin: 0 auto;
   }
 
   /*                        Third section                              */
