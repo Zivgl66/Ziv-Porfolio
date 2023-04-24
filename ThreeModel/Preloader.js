@@ -71,6 +71,9 @@ export default class Preloader extends EventEmitter {
   }
 
   secondIntro() {
+    if (this.device === "mobile") {
+      this.characterWave.position.set(1.9, 0.58, 4);
+    }
     return new Promise((resolve) => {
       this.secondTimeline = new GSAP.timeline();
       this.secondTimeline
@@ -110,9 +113,9 @@ export default class Preloader extends EventEmitter {
           onComplete: resolve,
         })
         .to(this.characterWave.scale, {
-          x: 1.3,
-          y: 1.3,
-          z: 1.3,
+          x: 0.8,
+          y: 0.8,
+          z: 0.8,
         })
         .to(".arrow-svg-wrapper", {
           opacity: 1,

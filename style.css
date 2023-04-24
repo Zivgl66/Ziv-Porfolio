@@ -882,10 +882,10 @@ h3 {
 @media (max-width: 399px) {
   /*                        First section                              */
   .toggle-bar {
-    left: auto;
+    right: auto;
     top: 5%;
     margin: 0 auto;
-    width: 100%;
+    width: 100vw;
   }
   .arrow-svg-wrapper {
     top: 85%;

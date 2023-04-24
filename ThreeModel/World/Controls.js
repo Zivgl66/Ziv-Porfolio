@@ -11,6 +11,7 @@ export default class Controls {
     this.threeModel = new ThreeModel();
     this.scene = this.threeModel.scene;
     this.sizes = this.threeModel.sizes;
+    this.device = this.sizes.device;
     this.resources = this.threeModel.resources;
     this.time = this.threeModel.time;
     this.camera = this.threeModel.camera;
@@ -25,6 +26,10 @@ export default class Controls {
     this.currentSection = 1;
     GSAP.registerPlugin(ScrollTrigger);
     GSAP.registerPlugin(ScrollToPlugin);
+    if (this.device === "mobile") {
+      this.characterRun.position.set(4, 0.5, 3.2);
+      this.characterSit.position.set(0.5, -0.1, 3.2);
+    }
 
     //cards carousel
     const cardsContainer = document.querySelector(".card-carousel");
@@ -121,7 +126,7 @@ export default class Controls {
   setScrollTriger() {
     ScrollTrigger.matchMedia({
       // Desktop
-      "(min-width: 699px) ": () => {
+      "(min-width: 399px) ": () => {
         this.firstTimeline = new GSAP.timeline({
           scrollTrigger: {
             trigger: ".first-move",
@@ -448,16 +453,16 @@ export default class Controls {
         this.characterThanksEnterTimeline = new GSAP.timeline({
           scrollTrigger: {
             trigger: ".section-second",
-            start: "-=100px center",
+            start: "top center",
             end: "bottom bottom",
             scrub: 0.2,
             invalidateOnRefresh: true,
             immediateRender: false,
           },
         }).to(this.characterThanks.scale, {
-          x: 1,
-          y: 1,
-          z: 1,
+          x: 0.8,
+          y: 0.8,
+          z: 0.8,
           stagger: 0.5,
           ease: "steps.in(3)",
         });
@@ -586,9 +591,9 @@ export default class Controls {
             ease: "power.in(1.2)",
           })
           .to(this.characterSit.scale, {
-            x: 1,
-            y: 1,
-            z: 1,
+            x: 0.8,
+            y: 0.8,
+            z: 0.8,
           });
       },
     });
