@@ -931,7 +931,7 @@ h3 {
   /*                        Second section                              */
 
   .title-main-second {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: 200px 0px 0px 10px;
   }
   .about-wrapper {
@@ -943,7 +943,7 @@ h3 {
     width: 250px;
     height: 400px;
     padding: 20px;
-    margin: 0 0 0 25px;
+    margin: 0 auto;
   }
   .summary-paragraph {
     font-size: 1rem;
@@ -958,7 +958,7 @@ h3 {
     width: 250px;
     height: 400px;
     padding: 20px;
-    margin: 0 0 0 25px;
+    margin: 0 auto;
   }
 
   /*                        Third section                              */
