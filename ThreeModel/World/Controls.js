@@ -24,10 +24,9 @@ export default class Controls {
     this.thirdColor = new THREE.Color("#EAB9B4");
     this.forthColor = new THREE.Color("#C9E1ED");
     this.currentSection = 1;
-    GSAP.registerPlugin(ScrollTrigger);
-    GSAP.registerPlugin(ScrollToPlugin);
+    GSAP.registerPlugin(ScrollTrigger, ScrollToPlugin);
     if (this.device === "mobile") {
-      this.characterRun.position.set(4, 0.5, 3.2);
+      this.characterRun.position.set(1, -0.5, 3.2);
       this.characterSit.position.set(0.5, -0.1, 3.2);
     }
 
@@ -60,7 +59,6 @@ export default class Controls {
     this.scrollTo();
     this.setSmoothScroll();
     window.addEventListener("wheel", this.setScrollTriger());
-    // this.setScrollTriger();
   }
 
   scrollTo() {
@@ -362,12 +360,13 @@ export default class Controls {
       },
 
       //  Mobile (Small Screen)
+
       "(max-width: 399px) ": () => {
         this.firstTimeline = new GSAP.timeline({
           scrollTrigger: {
             trigger: ".first-move",
             start: "top top",
-            end: "+=200px",
+            end: "-=100px",
             scrub: 0.5,
             invalidateOnRefresh: true,
             immediateRender: false,
@@ -515,25 +514,25 @@ export default class Controls {
         this.characterRunEnterTimeline = new GSAP.timeline({
           scrollTrigger: {
             trigger: ".section-third",
-            start: "-=100px center",
-            end: "+=100px top",
+            start: "top center",
+            end: "bottom bottom",
             scrub: 0,
             stagger: 1,
             invalidateOnRefresh: true,
             immediateRender: false,
           },
         }).to(this.characterRun.scale, {
-          x: 0.5,
-          y: 0.5,
-          z: 0.5,
+          x: 0.8,
+          y: 0.8,
+          z: 0.8,
           ease: "circ.in",
         });
 
         this.characterRunExitTimeline = new GSAP.timeline({
           scrollTrigger: {
-            trigger: ".section-third",
-            start: "bottom bottom",
-            end: "bottom +10px",
+            trigger: ".section-forth",
+            start: "-=50px center",
+            end: "-=150px bottom",
             scrub: 0.2,
             invalidateOnRefresh: true,
             immediateRender: false,
@@ -562,7 +561,6 @@ export default class Controls {
           .to(".title4", {
             opacity: 1,
             transform: "translateX(0)",
-            // stagger: 1,
             duration: 5,
             ease: "slow(1.2, 1.5, true)",
           })
@@ -598,6 +596,7 @@ export default class Controls {
       },
     });
   }
+
   resize() {}
 
   update() {}

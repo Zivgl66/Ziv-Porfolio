@@ -355,6 +355,7 @@ h3 {
   }
 }
 
+
 /* Section 2---------------------------------------------------- */
 .about-wrapper {
   display: grid;
@@ -755,7 +756,7 @@ h3 {
 .contact-links {
   display: flex;
   flex-direction: column;
-  margin: 50px 100px;
+  /* margin: 50px 100px; */
   justify-content: space-around;
   align-items: start;
 }
@@ -899,7 +900,7 @@ h3 {
     height: 50px;
   }
   .section3-margin {
-    height: 300px;
+    height: 400px;
   }
   .main-title-wrapper {
     display: flex;

@@ -72,56 +72,107 @@ export default class Preloader extends EventEmitter {
 
   secondIntro() {
     if (this.device === "mobile") {
-      this.characterWave.position.set(1.9, 0.58, 4);
+      //  Change the Opening animation in case of mobile device
+
+      this.characterWave.position.set(0, 0.8, 3);
+      return new Promise((resolve) => {
+        this.secondTimeline = new GSAP.timeline();
+        this.secondTimeline
+          .to(
+            ".intro-text .animate-this",
+            {
+              yPercent: 100,
+              stagger: 0.05,
+              ease: "back.in(1.8)",
+            },
+            "fadeout"
+          )
+          .to(
+            ".arrow-svg-wrapper",
+            {
+              opacity: 0,
+            },
+            "fadeout"
+          )
+          .to(".firstLine", {
+            opacity: 1,
+            transform: "translateX(0) translateY(0)",
+            stagger: 0.07,
+            ease: "back.out(1.8)",
+          })
+          .to(".secondLine", {
+            opacity: 1,
+            transform: "translateX(0) translateY(0)",
+            stagger: 0.07,
+            ease: "back.out(1.8)",
+          })
+          .to(".title-sub", {
+            opacity: 1,
+            transform: "translateX(0) translateY(0)",
+            stagger: 0.01,
+            ease: "back.out(1.8)",
+            onComplete: resolve,
+          })
+          .to(this.characterWave.scale, {
+            x: 0.8,
+            y: 0.8,
+            z: 0.8,
+          })
+          .to(".arrow-svg-wrapper", {
+            opacity: 1,
+            onComplete: resolve,
+          });
+      });
+    } else {
+      return new Promise((resolve) => {
+        this.secondTimeline = new GSAP.timeline();
+        this.secondTimeline
+          .to(
+            ".intro-text .animate-this",
+            {
+              yPercent: 100,
+              stagger: 0.05,
+              ease: "back.in(1.8)",
+            },
+            "fadeout"
+          )
+          .to(
+            ".arrow-svg-wrapper",
+            {
+              opacity: 0,
+            },
+            "fadeout"
+          )
+          .to(".firstLine", {
+            opacity: 1,
+            transform: "translateX(0) translateY(0)",
+            stagger: 0.07,
+            ease: "back.out(1.8)",
+          })
+          .to(".secondLine", {
+            opacity: 1,
+            transform: "translateX(0) translateY(0)",
+            stagger: 0.07,
+            ease: "back.out(1.8)",
+          })
+          .to(".title-sub", {
+            opacity: 1,
+            transform: "translateX(0) translateY(0)",
+            stagger: 0.01,
+            ease: "back.out(1.8)",
+            onComplete: resolve,
+          })
+          .to(this.characterWave.scale, {
+            x: 1.3,
+            y: 1.3,
+            z: 1.3,
+          })
+          .to(".arrow-svg-wrapper", {
+            opacity: 1,
+            onComplete: resolve,
+          });
+      });
     }
-    return new Promise((resolve) => {
-      this.secondTimeline = new GSAP.timeline();
-      this.secondTimeline
-        .to(
-          ".intro-text .animate-this",
-          {
-            yPercent: 100,
-            stagger: 0.05,
-            ease: "back.in(1.8)",
-          },
-          "fadeout"
-        )
-        .to(
-          ".arrow-svg-wrapper",
-          {
-            opacity: 0,
-          },
-          "fadeout"
-        )
-        .to(".firstLine", {
-          opacity: 1,
-          transform: "translateX(0) translateY(0)",
-          stagger: 0.07,
-          ease: "back.out(1.8)",
-        })
-        .to(".secondLine", {
-          opacity: 1,
-          transform: "translateX(0) translateY(0)",
-          stagger: 0.07,
-          ease: "back.out(1.8)",
-        })
-        .to(".title-sub", {
-          opacity: 1,
-          transform: "translateX(0) translateY(0)",
-          stagger: 0.01,
-          ease: "back.out(1.8)",
-          onComplete: resolve,
-        })
-        .to(this.characterWave.scale, {
-          x: 0.8,
-          y: 0.8,
-          z: 0.8,
-        })
-        .to(".arrow-svg-wrapper", {
-          opacity: 1,
-          onComplete: resolve,
-        });
-    });
   }
 
   onScroll(e) {
@@ -184,7 +235,7 @@ export default class Preloader extends EventEmitter {
     } else if (this.device === "tablet") {
       this.character.scale.set(1.3, 1.3, 1.3);
     } else if (this.device === "mobile") {
-      this.character.scale.set(1.3, 1.3, 1.3);
+      this.character.scale.set(0.8, 0.8, 0.8);
     }
   }
 
