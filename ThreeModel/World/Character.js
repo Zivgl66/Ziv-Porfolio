@@ -43,8 +43,8 @@ export default class Character {
     this.scene.add(this.characterWave);
     this.scene.add(this.characterRun);
     this.scene.add(this.characterSit);
-    this.character.scale.set(1.3, 1.3, 1.3);
-    this.characterWave.scale.set(1.3, 1.3, 1.3);
+    // this.character.scale.set(1.3, 1.3, 1.3);
+    // this.characterWave.scale.set(1.3, 1.3, 1.3);
     this.character.position.set(0, -1, 1.2);
     this.characterWave.position.set(1.9, 0.08, 4);
     this.characterRun.position.set(4, 0.2, 3.2);

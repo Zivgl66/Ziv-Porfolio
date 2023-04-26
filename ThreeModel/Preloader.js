@@ -74,7 +74,7 @@ export default class Preloader extends EventEmitter {
     if (this.device === "mobile") {
       //  Change the Opening animation in case of mobile device
 
-      this.characterWave.position.set(0, 0.8, 3);
+      this.characterWave.position.set(0, 0.75, 3);
       return new Promise((resolve) => {
         this.secondTimeline = new GSAP.timeline();
         this.secondTimeline

@@ -26,7 +26,7 @@ export default class Controls {
     this.currentSection = 1;
     GSAP.registerPlugin(ScrollTrigger, ScrollToPlugin);
     if (this.device === "mobile") {
-      this.characterRun.position.set(1, -0.5, 3.2);
+      this.characterRun.position.set(2 , -0.5, 3.2);
       this.characterSit.position.set(0.5, -0.1, 3.2);
     }
 

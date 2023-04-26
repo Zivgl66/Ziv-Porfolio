@@ -299,8 +299,7 @@ h3 {
 }
 
 .text_1,
-.text_2,
-.text_3 {
+.text_2 {
   font-family: "Kanit", sans-serif;
   overflow: hidden;
   white-space: nowrap;
@@ -354,7 +353,6 @@ h3 {
     opacity: 1;
   }
 }
-
 
 /* Section 2---------------------------------------------------- */
 .about-wrapper {
@@ -433,7 +431,7 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 450px;
+  /* max-width: 450px; */
   height: 470px;
   margin: 0 100px 0 0;
   background-color: rgba(255, 255, 255, 0.3);
@@ -900,7 +898,7 @@ h3 {
     height: 50px;
   }
   .section3-margin {
-    height: 400px;
+    height: 600px;
   }
   .main-title-wrapper {
     display: flex;
@@ -927,14 +925,15 @@ h3 {
   }
   .title-sub {
     font-size: 1.5rem;
-    position: absolute;
-    text-align: center;
-    left: auto;
+    left: 28%;
     top: 59%;
   }
 
   /*                        Second section                              */
 
+  .summary {
+    transform: translateX(-20%);
+  }
   .title-main-second {
     font-size: 3rem;
     margin: 200px 0px 0px 10px;
@@ -945,13 +944,14 @@ h3 {
   .about-wrapper {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
   .about-paragraph {
     max-width: 300px;
     width: 300px;
     height: 400px;
-    margin: 0 auto;
-    padding: 20px;
+    margin: 0 50px 0 50px;
+    padding:25px;
   }
 
   .summary-paragraph {
@@ -960,6 +960,7 @@ h3 {
     word-spacing: 0.2rem;
   }
   .educational-skills {
+    transform: translateX(-20%);
     font-size: 1.2rem;
     line-height: 18px;
     word-spacing: 0.2rem;
