@@ -26,7 +26,7 @@ export default class Controls {
     this.currentSection = 1;
     GSAP.registerPlugin(ScrollTrigger, ScrollToPlugin);
     if (this.device === "mobile") {
-      this.characterRun.position.set(2 , -0.5, 3.2);
+      this.characterRun.position.set(1, -0.5, 3.2);
       this.characterSit.position.set(0.5, -0.1, 3.2);
     }
 
@@ -516,8 +516,7 @@ export default class Controls {
             trigger: ".section-third",
             start: "top center",
             end: "bottom bottom",
-            scrub: 0,
-            stagger: 1,
+            scrub: 0.2,
             invalidateOnRefresh: true,
             immediateRender: false,
           },
@@ -525,7 +524,6 @@ export default class Controls {
           x: 0.8,
           y: 0.8,
           z: 0.8,
-          ease: "circ.in",
         });
 
         this.characterRunExitTimeline = new GSAP.timeline({

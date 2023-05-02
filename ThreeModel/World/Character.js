@@ -6,6 +6,8 @@ export default class Character {
   constructor() {
     this.threeModel = new ThreeModel();
     this.scene = this.threeModel.scene;
+    this.sizes = this.threeModel.sizes;
+    this.device = this.sizes.device;
     this.resources = this.threeModel.resources;
     this.time = this.threeModel.time;
     this.characterAnimation = this.resources.items.character;
@@ -96,7 +98,9 @@ export default class Character {
     this.characterSit.rotation.y = this.lerp.current;
     this.mixer.update(this.time.delta * 0.0012);
     this.mixerWave.update(this.time.delta * 0.0007);
-    this.mixerRun.update(this.time.delta * 0.0017);
+    if (this.device === "mobile")
+      this.mixerRun.update(this.time.delta * 0.0027);
+    else this.mixerRun.update(this.time.delta * 0.0017);
     this.mixerSit.update(this.time.delta * 0.001);
   }
 }

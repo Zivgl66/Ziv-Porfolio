@@ -937,6 +937,7 @@ h3 {
   .title-main-second {
     font-size: 3rem;
     margin: 200px 0px 0px 10px;
+    transform: translateX(-20%);
   }
   .title2 {
     font-size: 2.5rem;
@@ -951,7 +952,7 @@ h3 {
     width: 300px;
     height: 400px;
     margin: 0 50px 0 50px;
-    padding:25px;
+    padding: 25px;
   }
 
   .summary-paragraph {
