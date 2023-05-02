@@ -413,6 +413,13 @@ h3 {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   transform: translateX(-50%);
   opacity: 0;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.27);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.2px);
+  -webkit-backdrop-filter: blur(5.2px);
+  border: 1px solid rgba(255, 255, 255, 0.58);
 }
 .summary-paragraph {
   font-size: 1.4rem;
@@ -914,6 +921,7 @@ h3 {
     top: 38%;
     left: auto;
     text-align: center;
+    justify-content: center;
   }
   .secondLine {
     font-size: 6.5rem;
@@ -925,19 +933,19 @@ h3 {
   }
   .title-sub {
     font-size: 1.5rem;
-    left: 28%;
+    left: 25%;
     top: 59%;
   }
 
   /*                        Second section                              */
 
   .summary {
-    transform: translateX(-20%);
+    transform: translateX(-10%);
   }
   .title-main-second {
     font-size: 3rem;
     margin: 200px 0px 0px 10px;
-    transform: translateX(-20%);
+    transform: translateX(-10%);
   }
   .title2 {
     font-size: 2.5rem;
@@ -961,7 +969,7 @@ h3 {
     word-spacing: 0.2rem;
   }
   .educational-skills {
-    transform: translateX(-20%);
+    transform: translateX(-10%);
     font-size: 1.2rem;
     line-height: 18px;
     word-spacing: 0.2rem;
@@ -974,6 +982,7 @@ h3 {
     --card-max-width: 300px;
     --card-height: 400px;
     margin: 50px 0px 0 0px;
+    transform: translateX(10%);
   }
 
   .card {
