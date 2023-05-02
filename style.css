@@ -1014,4 +1014,10 @@ h3 {
     font-size: 28px;
     transition: all 0.2s ease-in-out;
   }
+
+  /*                        Forth section                              */
+
+  .contact-links {
+    margin-right: 100px;
+  }
 }
