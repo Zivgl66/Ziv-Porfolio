@@ -927,6 +927,7 @@ h3 {
     left: auto;
     text-align: center;
     justify-content: center;
+    transform: translate(-20%, -20%);
   }
   .secondLine {
     font-size: 6.5rem;
@@ -935,11 +936,13 @@ h3 {
     position: absolute;
     text-align: center;
     width: 100%;
+    transform: translate(-20%, -20%);
   }
   .title-sub {
     font-size: 1.5rem;
     left: 25%;
     top: 61%;
+    transform: translateX(-15%) translateY(-15%);
   }
 
   /*                        Second section                              */
