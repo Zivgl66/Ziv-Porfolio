@@ -977,7 +977,7 @@ h3 {
   .card-carousel {
     --card-width: 50%;
     --card-max-width: 300px;
-    --card-height: 400px;
+    --card-height: 500px;
     margin: 50px 0px 0 0px;
     transform: translateX(10%);
   }
@@ -985,23 +985,23 @@ h3 {
   .card {
     position: absolute;
     width: 300px;
-    height: 380px;
+    height: 480px;
     border-radius: 50px;
   }
   .card-header {
     font-size: 20px;
-    margin: 5px 0 0 5px;
+    margin: 10px 0 0 8px;
   }
   .card-summary {
-    font-size: 16px;
-    margin: 2px;
+    font-size: 18px;
+    margin: 20px;
     text-align: center;
   }
   .card-tech {
     margin: 5px;
   }
   .card-tech li {
-    font-size: 14px;
+    font-size: 16px;
   }
   .card-links {
     left: 20%;
@@ -1011,7 +1011,7 @@ h3 {
   }
 
   .card-links i {
-    font-size: 28px;
+    font-size: 32px;
     transition: all 0.2s ease-in-out;
   }
 
