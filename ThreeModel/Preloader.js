@@ -163,9 +163,9 @@ export default class Preloader extends EventEmitter {
             onComplete: resolve,
           })
           .to(this.characterWave.scale, {
-            x: 1.3,
-            y: 1.3,
-            z: 1.3,
+            x: 1.5,
+            y: 1.5,
+            z: 1.5,
           })
           .to(".arrow-svg-wrapper", {
             opacity: 1,

@@ -222,9 +222,9 @@ export default class Controls {
             immediateRender: false,
           },
         }).to(this.characterThanks.scale, {
-          x: 1.3,
-          y: 1.3,
-          z: 1.3,
+          x: 1.5,
+          y: 1.5,
+          z: 1.5,
           stagger: 0.5,
           ease: "steps.in(3)",
         });
@@ -285,9 +285,9 @@ export default class Controls {
             immediateRender: false,
           },
         }).to(this.characterRun.scale, {
-          x: 0.5,
-          y: 0.5,
-          z: 0.5,
+          x: 1.2,
+          y: 1.2,
+          z: 1.2,
           ease: "circ.in",
         });
 
@@ -459,9 +459,9 @@ export default class Controls {
             immediateRender: false,
           },
         }).to(this.characterThanks.scale, {
-          x: 0.8,
-          y: 0.8,
-          z: 0.8,
+          x: 1,
+          y: 1,
+          z: 1,
           stagger: 0.5,
           ease: "steps.in(3)",
         });
