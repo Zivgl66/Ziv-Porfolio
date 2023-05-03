@@ -237,6 +237,15 @@ h3 {
   opacity: 1;
   transform: translate(-50%, -50%);
   transition: transform 0.4s ease-in-out;
+  animation: bounceUp 0.5s ease-in alternate infinite;
+}
+@keyframes bounceUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
 }
 .arrow-svg-wrapper-up:hover {
   cursor: pointer;
