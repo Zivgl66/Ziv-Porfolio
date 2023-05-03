@@ -923,7 +923,7 @@ h3 {
   }
   .firstLine {
     width: 100%;
-    top: 40%;
+    top: 45%;
     left: auto;
     text-align: center;
     justify-content: center;
@@ -939,7 +939,7 @@ h3 {
   .title-sub {
     font-size: 1.5rem;
     left: 25%;
-    top: 60%;
+    top: 62%;
   }
 
   /*                        Second section                              */
